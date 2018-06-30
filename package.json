@@ -12,7 +12,8 @@
     "mobile-app",
     "igdb",
     "library",
-    "games"
+    "games",
+    "typescript"
   ],
   "author": "Lex Martinez<lex0316@gmail.com>",
   "license": "MIT",
@@ -30,10 +31,14 @@
     "react-native": "0.55.4"
   },
   "devDependencies": {
+    "@types/react": "^16.4.6",
+    "@types/react-native": "^0.55.26",
     "babel-jest": "23.2.0",
     "babel-preset-react-native": "4.0.0",
     "jest": "23.2.0",
-    "react-test-renderer": "16.3.1"
+    "react-native-typescript-transformer": "^1.2.10",
+    "react-test-renderer": "16.3.1",
+    "typescript": "^2.9.2"
   },
   "jest": {
     "preset": "react-native"

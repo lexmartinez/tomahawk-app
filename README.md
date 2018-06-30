@@ -16,7 +16,10 @@ $ git clone https://github.com/lexmartinez/tomahawk-app
 $ cd tomahawk-app
 
 # install the dependencies with npm
-$ npm install
+$ yarn install
+
+# start react-native development server
+$ yarn start --reset-cache
 
 # start IOS emulator with running App
 $ react-native run-ios
@@ -32,10 +35,12 @@ $ react-native run-ios
 ### Dependencies
 
 You'll need to run this app:
+
 * `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
 * Ensure you're running Node (`v8.9.4`+) and NPM (`5.6.0`+)
 * `react-native-cli: 2.0.1`
 * `react-native: 0.54.0`
+* `yarn 1.5.1`
 
   `tomahawk-app` is a `react-native` mobile application is assumed that you're familiarized with this framework, otherwise it is here where you should start [react-native-getting-started](https://facebook.github.io/react-native/docs/getting-started.html#content)
 
@@ -43,6 +48,7 @@ You'll need to run this app:
   
 After you have installed all dependencies you can now start developing with:
 
+* `react-native start --reset-cache` then
 * `react-native run-ios`
 * or `react-native run-android`
 
