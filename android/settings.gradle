@@ -1,0 +1,3 @@
+rootProject.name = 'tomahawk'
+
+include ':app'

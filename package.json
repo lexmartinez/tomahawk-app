@@ -1,0 +1,42 @@
+{
+  "name": "tomahawk-app",
+  "version": "0.0.1",
+  "description": "A mobile video game library App powered by IGDB",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexmartinez/tomahawk-app.git"
+  },
+  "keywords": [
+    "react-native",
+    "video-game",
+    "mobile-app",
+    "igdb",
+    "redux",
+    "jsx",
+    "games"
+  ],
+  "author": "Lex Martinez<lex0316@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lexmartinez/tomahawk-app/issues"
+  },
+  "homepage": "https://github.com/lexmartinez/tomahawk-app",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.3.1",
+    "react-native": "0.55.4"
+  },
+  "devDependencies": {
+    "babel-jest": "23.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "23.2.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
