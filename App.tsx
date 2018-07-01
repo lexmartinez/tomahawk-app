@@ -7,6 +7,16 @@ import Sample from './src/containers/Sample'
 import {Colors} from './src/config/Constants'
 import {Tabs as TabIcons} from './src/config/Icons'
 
+const styles = StyleSheet.create({
+  tabBarStyle: {
+    backgroundColor: Colors.primary_red,
+    height:60
+  },
+  labelStyle: {
+    marginTop: -10, 
+    marginBottom:10
+  }
+});
 export default class App extends Component {
 
   componentDidMount() {
@@ -16,14 +26,14 @@ export default class App extends Component {
     return (
       <Router>
         <Stack key={'container'}>
-          <Scene hideNavBar panHandlers={null} key={'tab-container'}>
+          <Scene key={'tab-container'}>
             <Tabs key={'tab-bar'} showLabel={true} tabBarPosition={'bottom'} 
-              labelStyle={{marginTop: -5, marginBottom:5}} 
-              activeTintColor={Colors.primary_red} inactiveTintColor={Colors.primary_grey}>
-              <Scene key={'news-tab-content'} component={Sample} icon={TabIcons.news} tabBarLabel={'News'}/>
-              <Scene key={'games-tab-content'} component={Sample} icon={TabIcons.games} tabBarLabel={'Games'}/>
-              <Scene key={'genres-tab-content'} component={Sample} icon={TabIcons.genres} tabBarLabel={'Categories'}/>
-              <Scene key={'search-tab-content'} component={Sample} icon={TabIcons.search} tabBarLabel={'Search'}/>
+              labelStyle={styles.labelStyle} tabBarStyle={styles.tabBarStyle}
+              activeTintColor={Colors.white} inactiveTintColor={Colors.black_55}>
+              <Scene key={'news-tab-content'} component={Sample} icon={TabIcons.news} tabBarLabel={'News'} hideNavBar/>
+              <Scene key={'games-tab-content'} component={Sample} icon={TabIcons.games} tabBarLabel={'Games'} hideNavBar/>
+              <Scene key={'genres-tab-content'} component={Sample} icon={TabIcons.genres} tabBarLabel={'Categories'} hideNavBar/>
+              <Scene key={'search-tab-content'} component={Sample} icon={TabIcons.search} tabBarLabel={'Search'} hideNavBar/>
             </Tabs>
           </Scene>
         </Stack>
