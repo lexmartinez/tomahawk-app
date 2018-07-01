@@ -4,17 +4,18 @@ import { StyleSheet } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
 import { Scene, Router, Tabs, Stack } from 'react-native-router-flux';
 import Sample from './src/containers/Sample'
-import {Colors} from './src/config/Constants'
-import {Tabs as TabIcons} from './src/config/Icons'
-
+import { Colors } from './src/config/Constants'
+import { Tabs as TabIcons } from './src/config/Icons'
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
+ 
 const styles = StyleSheet.create({
   tabBarStyle: {
     backgroundColor: Colors.primary_red,
-    height:60
+    height: hp('9%')
   },
   labelStyle: {
-    marginTop: -10, 
-    marginBottom:10
+    marginTop: hp('-1.2%'), 
+    marginBottom: hp('1.2%')
   }
 });
 export default class App extends Component {
