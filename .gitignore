@@ -56,3 +56,4 @@ buck-out/
 *.jsbundle
 index.android.bundle
 index.android.bundle.meta
+android/app/src/main/res/drawable*/node_modules*
