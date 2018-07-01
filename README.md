@@ -19,7 +19,7 @@ $ cd tomahawk-app
 $ yarn install
 
 # start react-native development server
-$ yarn start --reset-cache
+$ yarn start
 
 # start IOS emulator with running App
 $ react-native run-ios
