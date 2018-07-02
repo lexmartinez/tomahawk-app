@@ -1,7 +1,7 @@
 import React from 'react'
 import { Colors } from './Constants'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
+import { hp } from './Utils'
 
 export const Tabs = {
     news: (props:any)=>

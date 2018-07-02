@@ -6,16 +6,16 @@ import { Scene, Router, Tabs, Stack } from 'react-native-router-flux';
 import Sample from './src/containers/Sample'
 import { Colors } from './src/config/Constants'
 import { Tabs as TabIcons } from './src/config/Icons'
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen'
- 
+import { hp } from './src/config/Utils'
+
 const styles = StyleSheet.create({
   tabBarStyle: {
     backgroundColor: Colors.primary_red,
-    height: hp('9%')
+    height: hp('9%', '6%')
   },
   labelStyle: {
-    marginTop: hp('-1.2%'), 
-    marginBottom: hp('1.2%')
+    marginTop: hp('-1.2%','-1%'),
+    marginBottom: hp('1.2%', '0%')
   }
 });
 export default class App extends Component {
