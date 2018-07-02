@@ -1,0 +1,3 @@
+interface BaseViewProps {
+    children: any
+}

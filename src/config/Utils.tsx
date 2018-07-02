@@ -7,4 +7,4 @@ export function hp (val: string, iXVal?:string) {
 
 export function wp (val: string, iXVal?:string) {
     return isIphoneX() ? wdp(iXVal ? iXVal : val) : wdp(val)
- }
+}

@@ -1,15 +1,16 @@
 import React from 'react'
 import { Component } from 'react'
-import {
-    Text,
-    View
-} from 'react-native'
+import { Text } from 'react-native'
+import { BaseView } from '../components'
+
 
 export default class Sample extends Component {
 
     render() {
         return (
-            <View style={{backgroundColor: '#fff', height: 600}}><Text>Sample Component</Text></View>
+            <BaseView>
+                <Text>Sample Container</Text>
+            </BaseView>
         )
     }
 
