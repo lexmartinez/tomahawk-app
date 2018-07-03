@@ -8,14 +8,14 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 export default class BaseView extends Component<BaseViewProps> {
-    
+
     constructor(props: BaseViewProps) {
         super(props)
         this.renderForeground = this.renderForeground.bind(this)
         this.renderStickyHeader = this.renderStickyHeader.bind(this)
     }
 
-    renderForeground () {
+    renderForeground() {
         return (
             <View key={'parallax-header'} style={ styles.parallaxHeader }>
                 <Text style={ styles.parallaxText }>
@@ -26,14 +26,14 @@ export default class BaseView extends Component<BaseViewProps> {
         )
     }
 
-    renderStickyHeader () {
+    renderStickyHeader() {
         return (
             <View key={'sticky-header'} style={styles.stickyHeader}>
                 <Text style={styles.stickyText}>{this.props.title}</Text>
             </View>
         )
     }
-    render () {
+    render() {
         const { children } = this.props
         return (
             <ParallaxScrollView
@@ -45,7 +45,7 @@ export default class BaseView extends Component<BaseViewProps> {
             renderForeground={this.renderForeground}
             renderStickyHeader={this.renderStickyHeader}>
                     <StatusBar backgroundColor={Colors.black_20} translucent={true} barStyle={'dark-content'}/>
-                    <View style={styles.view}> 
+                    <View style={styles.view}>
                         {children}
                     </View>
             </ParallaxScrollView>

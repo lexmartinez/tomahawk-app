@@ -7,9 +7,7 @@ export default class SearchView extends Component <SearchViewProps, SearchViewSt
     render() {
         return (
             <View>
-                
             </View>
         )
     }
-
 }

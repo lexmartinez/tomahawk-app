@@ -25,7 +25,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
     "test": "jest",
-    "run-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
+    "run-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
+    "lint": "tslint -p \".\" -t stylish"
   },
   "dependencies": {
     "react": "16.3.1",
@@ -46,12 +47,16 @@
     "jest": "23.2.0",
     "react-native-typescript-transformer": "^1.2.10",
     "react-test-renderer": "16.3.1",
+    "tslint": "^5.10.0",
+    "tslint-react-recommended": "^1.0.15",
     "typescript": "^2.9.2"
   },
   "jest": {
     "preset": "react-native"
   },
   "rnpm": {
-    "assets": ["./src/assets/fonts/"]
+    "assets": [
+      "./src/assets/fonts/"
+    ]
   }
 }
