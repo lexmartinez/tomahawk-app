@@ -1,10 +1,9 @@
 import React from 'react'
 import { Component } from 'react'
-import { Text } from 'react-native'
-import { BaseView } from '../components'
+import { BaseView } from '../../components'
 
 
-export default class Sample extends Component {
+export default class GamesView extends Component <GamesViewProps, GamesViewState> {
 
     render() {
         return (

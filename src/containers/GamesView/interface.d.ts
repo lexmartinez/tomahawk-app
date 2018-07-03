@@ -1,0 +1,7 @@
+interface GamesViewProps {
+
+}
+
+interface GamesViewState {
+
+}

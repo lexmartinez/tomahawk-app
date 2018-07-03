@@ -1,0 +1,7 @@
+interface CategoriesViewProps {
+
+}
+
+interface CategoriesViewState {
+
+}

@@ -1,0 +1,7 @@
+interface NewsViewProps {
+
+}
+
+interface NewsViewState {
+
+}
