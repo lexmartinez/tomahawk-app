@@ -1,3 +1,4 @@
 interface BaseViewProps {
-    children: any
+    children: any,
+    title: string
 }

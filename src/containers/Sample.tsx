@@ -8,8 +8,8 @@ export default class Sample extends Component {
 
     render() {
         return (
-            <BaseView>
-                <Text>Sample Container</Text>
+            <BaseView title={'Games'}>
+                
             </BaseView>
         )
     }
