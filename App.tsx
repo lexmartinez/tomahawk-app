@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
 import { Scene, Router, Tabs, Stack } from 'react-native-router-flux';
 import Sample from './src/containers/Sample'
-import { Colors } from './src/config/Constants'
+import { Colors, Fonts } from './src/config/Constants'
 import { Tabs as TabIcons } from './src/config/Icons'
 import { hp } from './src/config/Utils'
 
@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
   },
   labelStyle: {
     marginTop: hp('-1.2%','-1%'),
-    marginBottom: hp('1.2%', '0%')
+    marginBottom: hp('1.2%', '0%'),
+    fontFamily: Fonts.SEMIBOLD
   }
 });
 export default class App extends Component {

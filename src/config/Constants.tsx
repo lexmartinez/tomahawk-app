@@ -9,3 +9,10 @@ export const Colors = {
     grey_50: 'rgba(150,150,150,0.5)',
     grey_30: 'rgba(150,150,150,0.3)'
 }
+
+export const Fonts = {
+    REGULAR: 'WorkSans-Regular',
+    LIGHT:'WorkSans-Light',
+    BOLD:'WorkSans-Bold',
+    SEMIBOLD:'WorkSans-SemiBold'
+}

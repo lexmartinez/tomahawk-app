@@ -1,5 +1,5 @@
 import { hp, wp } from '../../config/Utils'
-import { Colors } from '../../config/Constants'
+import { Colors, Fonts } from '../../config/Constants'
 import { StyleSheet, Dimensions } from 'react-native'
 import { getStatusBarHeight, isIphoneX } from 'react-native-iphone-x-helper'
 
@@ -27,13 +27,14 @@ export default StyleSheet.create({
     stickyText: {
         color: Colors.white,
         fontSize: hp('3%'),
-        margin: hp('2%')
+        margin: hp('2%'),
+        fontFamily: Fonts.SEMIBOLD
     },
     parallaxText: {
         color: Colors.secondary_red,
         fontSize: hp('5%'),
         paddingVertical: hp('1%'),
-        fontWeight: 'bold'
+        fontFamily: Fonts.SEMIBOLD
     },
     line: {
         borderBottomColor: isIphoneX() ? Colors.grey_30 : Colors.grey_50,
