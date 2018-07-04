@@ -16,3 +16,14 @@ export const Fonts = {
     REGULAR: 'WorkSans-Regular',
     SEMIBOLD: 'WorkSans-SemiBold'
 }
+
+export const ActionTypes = {
+    // Games
+    GET_GAMES_ERROR: 'GET_GAMES_ERROR',
+    GET_GAMES_REQUEST: 'GET_GAMES_REQUEST',
+    GET_GAMES_SUCCESS: 'GET_GAMES_SUCCESS',
+    // News
+    GET_NEWS_ERROR: 'GET_NEWS_ERROR',
+    GET_NEWS_REQUEST: 'GET_NEWS_REQUEST',
+    GET_NEWS_SUCCESS: 'GET_NEWS_SUCCESS',
+}

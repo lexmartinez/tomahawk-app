@@ -1,14 +1,12 @@
-import React from 'react'
-import { Component } from 'react'
-import { BaseView } from '../../components'
+import { connect } from 'react-redux'
+import GamesView from './View'
+import { getGamesSelector } from '../../reducers/Games'
+import { getGames } from '../../actions/Games'
 
-export default class GamesView extends Component <GamesViewProps, GamesViewState> {
+const mapStateToProps = (state: any) => getGamesSelector(state)
 
-    render() {
-        return (
-            <BaseView title={'Games'}>
-            </BaseView>
-        )
-    }
+const mapDispatchToProps = (dispatch: any) => ({
+  getGames: () => dispatch(getGames()),
+})
 
-}
+export default connect(mapStateToProps, mapDispatchToProps)(GamesView)
