@@ -1,7 +1,7 @@
-interface CategoriesViewProps {
-
+interface CategoriesProps {
+    getCategories() : void
 }
 
-interface CategoriesViewState {
+interface CategoriesState {
 
 }

@@ -6,7 +6,7 @@ const initial = {
     news: {}
 }
 
-export const getNewsSelector = (state: any) => ({ ...state.news })
+export const selector = (state: any) => ({ ...state.news })
 
 const newsReducer = (state: any = initial, action: any) => {
     const { GET_NEWS_SUCCESS, GET_NEWS_REQUEST, GET_NEWS_ERROR } = ActionTypes
@@ -15,7 +15,7 @@ const newsReducer = (state: any = initial, action: any) => {
         return {
           error: false,
           loading: false,
-          news: action.payload.games
+          news: action.payload.news
         }
       }
       case GET_NEWS_REQUEST: {

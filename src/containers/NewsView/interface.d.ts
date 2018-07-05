@@ -1,7 +1,7 @@
-interface NewsViewProps {
-
+interface NewsProps {
+    getNews() : void
 }
 
-interface NewsViewState {
+interface NewsState {
 
 }

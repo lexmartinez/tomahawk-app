@@ -1,6 +1,6 @@
 
 import { ActionTypes } from '../config/Constants'
-import {getGamesInfo } from '../services'
+import { fetchGames } from '../services'
 
 const { GET_GAMES_SUCCESS, GET_GAMES_REQUEST, GET_GAMES_ERROR } = ActionTypes
 
@@ -27,7 +27,7 @@ const getGamesRequest = () => (
 export const getGames = () => (
     (dispatch: any) => {
       dispatch(getGamesRequest())
-      return getGamesInfo()
+      return fetchGames()
         .then((games: any) => dispatch(getGamesSuccess(games)))
         .catch(() => dispatch(getGamesError()))
     }

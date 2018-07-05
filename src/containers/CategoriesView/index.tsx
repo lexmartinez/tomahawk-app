@@ -1,14 +1,12 @@
-import React from 'react'
-import { Component } from 'react'
-import { BaseView } from '../../components'
+import CategoriesView from './View'
+import { connect } from 'react-redux'
+import { selector } from '../../reducers/Categories'
+import { getCategories } from '../../actions/Categories'
 
-export default class CategoriesView extends Component <CategoriesViewProps, CategoriesViewState> {
+const mapStateToProps = (state: any) => selector(state)
 
-    render() {
-        return (
-            <BaseView title={'Categories'}>
-            </BaseView>
-        )
-    }
+const mapDispatchToProps = (dispatch: any) => ({
+  getCategories: () => dispatch(getCategories()),
+})
 
-}
+export default connect(mapStateToProps, mapDispatchToProps)(CategoriesView)

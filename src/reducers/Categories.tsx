@@ -1,31 +1,31 @@
 import { ActionTypes } from '../config/Constants'
 
 const initial = {
+    categories: {},
     error: false,
-    games: {},
     loading: false
 }
 
-export const selector = (state: any) => ({ ...state.games })
+export const selector = (state: any) => ({ ...state.news })
 
-const gamesReducer = (state: any = initial, action: any) => {
-    const { GET_GAMES_SUCCESS, GET_GAMES_REQUEST, GET_GAMES_ERROR } = ActionTypes
+const categoriesReducer = (state: any = initial, action: any) => {
+    const { GET_CATEGORIES_SUCCESS, GET_CATEGORIES_REQUEST, GET_CATEGORIES_ERROR } = ActionTypes
     switch (action.type) {
-      case GET_GAMES_SUCCESS: {
+      case GET_CATEGORIES_SUCCESS: {
         return {
+          categories: action.payload.categories,
           error: false,
-          games: action.payload.games,
           loading: false
         }
       }
-      case GET_GAMES_REQUEST: {
+      case GET_CATEGORIES_REQUEST: {
         return {
+          categories: [],
           error: false,
-          games: [],
           loading: true
         }
       }
-      case GET_GAMES_ERROR: {
+      case GET_CATEGORIES_ERROR: {
         return {
           ...state,
           error: true,
@@ -38,4 +38,4 @@ const gamesReducer = (state: any = initial, action: any) => {
     }
 }
 
-export default gamesReducer
+export default categoriesReducer

@@ -2,19 +2,19 @@ import React from 'react'
 import { Component } from 'react'
 import { BaseView } from '../../components'
 
-export default class GamesView extends Component <GamesProps, GamesState> {
+export default class NewsView extends Component <NewsProps, NewsState> {
 
-    constructor(props: GamesProps) {
+    constructor(props: NewsProps) {
         super(props)
     }
 
     componentDidMount() {
-        this.props.getGames()
+        this.props.getNews()
     }
 
     render() {
         return (
-            <BaseView title={'Games'}>
+            <BaseView title={'News'}>
             </BaseView>
         )
     }

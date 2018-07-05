@@ -1,7 +1,7 @@
-interface GamesViewProps {
-
+interface GamesProps {
+    getGames() : void
 }
 
-interface GamesViewState {
+interface GamesState {
 
 }

@@ -1,13 +1,12 @@
-import React from 'react'
-import { Component } from 'react'
-import { BaseView } from '../../components'
+import NewsView from './View'
+import { connect } from 'react-redux'
+import { selector } from '../../reducers/News'
+import { getNews } from '../../actions/News'
 
-export default class NewsView extends Component <NewsViewProps, NewsViewState> {
+const mapStateToProps = (state: any) => selector(state)
 
-    render() {
-        return (
-            <BaseView title={'News'}>
-            </BaseView>
-        )
-    }
-}
+const mapDispatchToProps = (dispatch: any) => ({
+  getNews: () => dispatch(getNews()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewsView)
