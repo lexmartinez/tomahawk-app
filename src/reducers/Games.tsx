@@ -2,7 +2,7 @@ import { ActionTypes } from '../config/Constants'
 
 const initial = {
     error: false,
-    games: {},
+    games: [],
     loading: false
 }
 

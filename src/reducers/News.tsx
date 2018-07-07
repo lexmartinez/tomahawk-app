@@ -3,7 +3,7 @@ import { ActionTypes } from '../config/Constants'
 const initial = {
     error: false,
     loading: false,
-    news: {}
+    news: []
 }
 
 export const selector = (state: any) => ({ ...state.news })

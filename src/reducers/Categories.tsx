@@ -1,7 +1,7 @@
 import { ActionTypes } from '../config/Constants'
 
 const initial = {
-    categories: {},
+    categories: [],
     error: false,
     loading: false
 }
