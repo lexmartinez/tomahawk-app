@@ -1,0 +1,17 @@
+
+import React from 'react'
+import { TouchableHighlight, View, Text } from 'react-native'
+import style from './style'
+export default (props: MessageViewProps) => {
+    return (<View style={style.screen}>
+        {props.icon()}
+        <Text style={style.screenTitle}>{props.title}</Text>
+        <Text style={style.screenText}>{props.text}</Text>
+        {
+            props.buttonText && props.action &&
+                <TouchableHighlight onPress={props.action} style={style.button}>
+                    <Text style={style.buttonText}>{props.buttonText}</Text>
+                </TouchableHighlight>
+        }
+    </View>)
+}
