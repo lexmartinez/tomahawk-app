@@ -1,6 +1,6 @@
 import { hp, wp } from '../../config/Utils'
 import { Colors, Fonts } from '../../config/Constants'
-import { StyleSheet, Dimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { getStatusBarHeight, isIphoneX } from 'react-native-iphone-x-helper'
 
 export default StyleSheet.create({
@@ -39,6 +39,7 @@ export default StyleSheet.create({
     },
     view: {
         backgroundColor: Colors.white,
-        height: hp('100%')
+        height: hp('100%'),
+        paddingTop: hp('1%')
     }
 })
