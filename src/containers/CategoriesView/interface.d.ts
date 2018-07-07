@@ -1,7 +1,8 @@
 interface CategoriesProps {
-    getCategories() : void
+    getCategories() : void,
+    loading: boolean,
+    categories: any[],
+    error: boolean
 }
 
-interface CategoriesState {
-
-}
+interface CategoriesState { }
