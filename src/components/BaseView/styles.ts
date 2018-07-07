@@ -39,7 +39,7 @@ export default StyleSheet.create({
     },
     view: {
         backgroundColor: Colors.white,
-        height: hp('100%'),
+        minHeight: hp('100%'),
         paddingTop: hp('1%')
     }
 })

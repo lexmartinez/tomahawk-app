@@ -2,8 +2,10 @@ import React from 'react'
 import { Component } from 'react'
 import { BaseView } from '../../components'
 import { Colors } from '../../config/Constants'
-import { FlatList, Text, TouchableHighlight, View, ActivityIndicator } from 'react-native'
-
+import { TouchableHighlight, View, Text } from 'react-native'
+import style from './style'
+import { PacmanIndicator } from 'react-native-indicators'
+import { hp } from '../../config/Utils'
 export default class CategoriesView extends Component <CategoriesProps, CategoriesState> {
 
     constructor(props: CategoriesProps) {
@@ -18,22 +20,21 @@ export default class CategoriesView extends Component <CategoriesProps, Categori
         return (
             <BaseView title={'Categories'}>
                 {this.props.loading &&
-                    <View>
-                        <ActivityIndicator color={Colors.secondary_red} animating={this.props.loading} size={'large'}/>
+                    <View style={style.loading}>
+                        <PacmanIndicator color={Colors.secondary_red} animating={this.props.loading} size={hp('10%')}/>
                     </View>
                 }
-            <FlatList
-                data={this.props.categories}
-                renderItem={({item, separators}) => (
-                    <TouchableHighlight
-                      onShowUnderlay={separators.highlight}
-                      onHideUnderlay={separators.unhighlight}>
-                      <View style={{backgroundColor: 'white'}}>
-                        <Text>{item.name}</Text>
-                      </View>
-                    </TouchableHighlight>
-                  )}
-                />
+                {
+                    (this.props.categories || []).map((item) =>
+                        <TouchableHighlight style={style.item} key={item.slug}>
+                            <View style={style.itemView}>
+                                <Text style={style.itemText} numberOfLines={1}
+                                    ellipsizeMode={'tail'}
+                                >{item.name}</Text>
+                            </View>
+                            </TouchableHighlight>
+                    )
+                }
             </BaseView>
         )
     }

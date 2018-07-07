@@ -6,6 +6,7 @@ export const Colors = {
     primary_grey: '#454545',
     primary_red: '#E53935',
     secondary_red: '#C62828',
+    transparent: 'transparent',
     white: '#FFFFFF',
     white_90: 'rgba(240,240,240,0.95)'
 }
