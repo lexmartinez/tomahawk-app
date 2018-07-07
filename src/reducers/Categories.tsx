@@ -6,7 +6,7 @@ const initial = {
     loading: false
 }
 
-export const selector = (state: any) => ({ ...state.news })
+export const selector = (state: any) => ({ ...state.categories })
 
 const categoriesReducer = (state: any = initial, action: any) => {
     const { GET_CATEGORIES_SUCCESS, GET_CATEGORIES_REQUEST, GET_CATEGORIES_ERROR } = ActionTypes
