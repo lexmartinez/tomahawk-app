@@ -12,4 +12,8 @@ export const Tabs = {
     (<Icon name={'newspaper'} size={hp('4%')} color={props.focused ? Colors.white : Colors.black_55} />),
   search: (props: any) =>
     (<Icon name={'magnify'} size={hp('4%')} color={props.focused ? Colors.white : Colors.black_55} />),
-  }
+}
+
+export const Global = {
+  error: () => (<Icon name={'bomb'} size={hp('30%')} color={Colors.grey_50} />),
+}
