@@ -1,6 +1,6 @@
 
 import { ActionTypes } from '../config/Constants'
-import { fetchNews } from '../services'
+import { fetchNews } from '../services/News'
 
 const { GET_NEWS_SUCCESS, GET_NEWS_REQUEST, GET_NEWS_ERROR } = ActionTypes
 
@@ -25,10 +25,18 @@ const getNewsRequest = () => (
     }
 )
 export const getNews = () => (
-    (dispatch: any) => {
-      dispatch(getNewsRequest())
+  (dispatch: any) => {
+    dispatch(getNewsRequest())
+    try {
       return fetchNews()
-        .then((news: any) => dispatch(getNewsSuccess(news)))
-        .catch(() => dispatch(getNewsError()))
+      .then((response) => response.json())
+      .then((response) => {
+          dispatch(response.error ? getNewsError() : getNewsSuccess(response))
+      })
+      .catch(() => dispatch(getNewsError()))
+    } catch (error) {
+      return dispatch(getNewsError())
     }
+  }
 )
+
