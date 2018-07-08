@@ -4,5 +4,3 @@ interface CategoriesProps {
     categories: any[],
     error: boolean
 }
-
-interface CategoriesState { }

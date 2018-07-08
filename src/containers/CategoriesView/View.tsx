@@ -7,7 +7,7 @@ import { TouchableHighlight, View, Text } from 'react-native'
 import style from './style'
 import { PacmanIndicator } from 'react-native-indicators'
 import { hp } from '../../config/Utils'
-export default class CategoriesView extends Component <CategoriesProps, CategoriesState> {
+export default class CategoriesView extends Component <CategoriesProps> {
 
     constructor(props: CategoriesProps) {
         super(props)
@@ -35,7 +35,7 @@ export default class CategoriesView extends Component <CategoriesProps, Categori
                                 <Text style={style.itemText} numberOfLines={1}
                                     ellipsizeMode={'tail'}>{item.name}</Text>
                             </View>
-                            </TouchableHighlight>
+                        </TouchableHighlight>
                     )
                 }
             </BaseView>

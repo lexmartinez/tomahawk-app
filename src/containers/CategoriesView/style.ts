@@ -7,7 +7,7 @@ export default StyleSheet.create({
         borderBottomColor: Colors.grey_30,
         borderBottomWidth: 1,
         height: hp('8%'),
-        marginLeft: hp('4%'),
+        marginLeft: wp('5%'),
         width: wp('90%')
     },
     itemText: {
