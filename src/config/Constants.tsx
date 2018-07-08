@@ -35,3 +35,4 @@ export const ActionTypes = {
 
 export const API_URL = 'https://api-endpoint.igdb.com'
 export const API_KEY = 'YOUR-IGDB-API-KEY'
+export const API_HEADER = 'user-key'
