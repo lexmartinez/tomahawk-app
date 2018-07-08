@@ -1,7 +1,7 @@
-import GamesView from './GamesView'
-import NewsView from './NewsView'
-import CategoriesView from './CategoriesView'
-import SearchView from './SearchView'
+import GamesView from './Games'
+import NewsView from './News'
+import CategoriesView from './Categories'
+import SearchView from './Search'
 
 export {
     GamesView,
