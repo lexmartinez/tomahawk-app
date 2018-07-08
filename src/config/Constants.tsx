@@ -32,3 +32,6 @@ export const ActionTypes = {
     GET_NEWS_REQUEST: 'GET_NEWS_REQUEST',
     GET_NEWS_SUCCESS: 'GET_NEWS_SUCCESS'
 }
+
+export const API_URL = 'https://api-endpoint.igdb.com'
+export const API_KEY = 'YOUR-IGDB-API-KEY'

@@ -1,6 +1,6 @@
 
 import { ActionTypes } from '../config/Constants'
-import { fetchCategories } from '../services'
+import { fetchCategories } from '../services/Categories'
 
 const { GET_CATEGORIES_SUCCESS, GET_CATEGORIES_REQUEST, GET_CATEGORIES_ERROR } = ActionTypes
 
