@@ -1,6 +1,7 @@
 import { widthPercentageToDP as wdp, heightPercentageToDP as hdp} from 'react-native-responsive-screen'
 import { isIphoneX } from 'react-native-iphone-x-helper'
 import { Platform } from 'react-native'
+import moment from 'moment'
 
 export function isIOS() {
     return Platform.OS === 'ios'
@@ -28,4 +29,12 @@ export function wpOS(android: string, ios: string, iphoneX?: string) {
     } else {
         return wdp(android)
     }
+}
+
+export function imageURI(uri: string) {
+    return isIOS() ? uri.replace('http://', 'https://') : uri
+}
+
+export function dateFormat(date: any, format?: string) {
+    return moment(date).format(format || 'MMMM DD, YYYY')
 }

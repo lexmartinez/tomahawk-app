@@ -31,6 +31,7 @@
   "dependencies": {
     "@types/react-redux": "^6.0.3",
     "@types/redux-logger": "^3.0.6",
+    "moment": "^2.22.2",
     "react": "16.3.1",
     "react-native": "0.55.4",
     "react-native-indicators": "^0.13.0",
