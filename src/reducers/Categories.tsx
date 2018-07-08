@@ -28,7 +28,6 @@ const categoriesReducer = (state: any = initial, action: any) => {
       case GET_CATEGORIES_ERROR: {
         return {
           ...state,
-          categories: [],
           error: true,
           loading: false,
         }
