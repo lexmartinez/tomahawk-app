@@ -27,9 +27,15 @@ const getCategoriesRequest = () => (
 export const getCategories = () => (
     (dispatch: any) => {
       dispatch(getCategoriesRequest())
-      return fetchCategories()
-        .then((response: any) => {
-          dispatch(response.error ? getCategoriesError() : getCategoriesSuccess(response))})
+      try {
+        return fetchCategories()
+        .then((response) => response.json())
+        .then((response) => {
+            dispatch(response.error ? getCategoriesError() : getCategoriesSuccess(response))
+        })
         .catch(() => dispatch(getCategoriesError()))
+      } catch (error) {
+        return dispatch(getCategoriesError())
+      }
     }
 )
