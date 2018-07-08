@@ -1,7 +1,7 @@
 interface NewsProps {
-    getNews() : void
+    getNews() : void,
+    loading: boolean,
+    news: any[],
+    error: boolean
 }
 
-interface NewsState {
-
-}
