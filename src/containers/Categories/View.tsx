@@ -7,7 +7,7 @@ import { TouchableHighlight, View, Text } from 'react-native'
 import style from './style'
 import { PacmanIndicator } from 'react-native-indicators'
 import { hp } from '../../config/Utils'
-export default class CategoriesView extends Component <CategoriesProps> {
+export default class Categories extends Component <CategoriesProps> {
 
     constructor(props: CategoriesProps) {
         super(props)

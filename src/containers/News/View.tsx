@@ -8,9 +8,8 @@ import { TouchableHighlight, View, Image, Text } from 'react-native'
 import style from './style'
 import { PacmanIndicator } from 'react-native-indicators'
 import { hp } from '../../config/Utils'
-import moment from 'moment'
 
-export default class NewsView extends Component <NewsProps> {
+export default class News extends Component <NewsProps> {
 
     constructor(props: NewsProps) {
         super(props)

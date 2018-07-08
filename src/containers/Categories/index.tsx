@@ -1,4 +1,4 @@
-import CategoriesView from './View'
+import Categories from './View'
 import { connect } from 'react-redux'
 import { selector } from '../../reducers/Categories'
 import { getCategories } from '../../actions/Categories'
@@ -9,4 +9,4 @@ const mapDispatchToProps = (dispatch: any) => ({
   getCategories: () => dispatch(getCategories()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CategoriesView)
+export default connect(mapStateToProps, mapDispatchToProps)(Categories)

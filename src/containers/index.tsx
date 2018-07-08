@@ -1,11 +1,13 @@
-import GamesView from './Games'
-import NewsView from './News'
-import CategoriesView from './Categories'
-import SearchView from './Search'
+import Games from './Games'
+import News from './News'
+import NewsDetail from './NewsDetail'
+import Categories from './Categories'
+import Search from './Search'
 
 export {
-    GamesView,
-    NewsView,
-    CategoriesView,
-    SearchView
+    Categories,
+    Games,
+    News,
+    NewsDetail,
+    Search
 }

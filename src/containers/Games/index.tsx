@@ -1,4 +1,4 @@
-import GamesView from './View'
+import Games from './View'
 import { connect } from 'react-redux'
 import { selector } from '../../reducers/Games'
 import { getGames } from '../../actions/Games'
@@ -9,4 +9,4 @@ const mapDispatchToProps = (dispatch: any) => ({
   getGames: () => dispatch(getGames()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(GamesView)
+export default connect(mapStateToProps, mapDispatchToProps)(Games)

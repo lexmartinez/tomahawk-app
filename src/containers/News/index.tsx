@@ -1,4 +1,4 @@
-import NewsView from './View'
+import News from './View'
 import { connect } from 'react-redux'
 import { selector } from '../../reducers/News'
 import { getNews } from '../../actions/News'
@@ -9,4 +9,4 @@ const mapDispatchToProps = (dispatch: any) => ({
   getNews: () => dispatch(getNews()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewsView)
+export default connect(mapStateToProps, mapDispatchToProps)(News)

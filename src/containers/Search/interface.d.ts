@@ -1,7 +1,3 @@
-interface SearchViewProps {
-
-}
-
-interface SearchViewState {
+interface SearchProps {
 
 }
