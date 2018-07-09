@@ -7,16 +7,12 @@ import style from './style'
 import ParallaxScrollView from 'react-native-parallax-scroll-view'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
-export default class BaseView extends Component<BaseViewProps, BaseViewState> {
+export default class BaseView extends Component<BaseViewProps> {
 
     constructor(props: BaseViewProps) {
         super(props)
-        this.state = {
-            barStyle: 'dark-content'
-        }
         this.renderForeground = this.renderForeground.bind(this)
         this.renderStickyHeader = this.renderStickyHeader.bind(this)
-        this.onChangeHeaderVisibility = this.onChangeHeaderVisibility.bind(this)
     }
 
     renderForeground() {
@@ -37,10 +33,6 @@ export default class BaseView extends Component<BaseViewProps, BaseViewState> {
             </View>
         )
     }
-
-    onChangeHeaderVisibility(sticky: any) {
-        this.setState({barStyle: `${sticky ? 'dark' : 'light'}-content`})
-    }
     render() {
         const { children } = this.props
         return (
@@ -51,10 +43,8 @@ export default class BaseView extends Component<BaseViewProps, BaseViewState> {
             backgroundSpeed={10}
             renderScrollComponent={() => <Animated.ScrollView style={{backgroundColor: Colors.white}}/>}
             renderForeground={this.renderForeground}
-            onChangeHeaderVisibility={this.onChangeHeaderVisibility}
             renderStickyHeader={this.renderStickyHeader}>
-                    <StatusBar backgroundColor={Colors.black_20} translucent={true}
-                        barStyle={this.state.barStyle}/>
+                    <StatusBar backgroundColor={Colors.black_20} translucent={true} barStyle={'dark-content'}/>
                     <View style={style.view}>
                         {children}
                     </View>
