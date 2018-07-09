@@ -3,7 +3,7 @@ import { Component } from 'react'
 import { StyleSheet } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
 import { Router, Scene, Stack, Tabs } from 'react-native-router-flux'
-import { Categories, Games, News, Search } from './src/containers'
+import { Categories, Games, News, Search, NewsDetail } from './src/containers'
 import { Colors, Fonts } from './src/config/Constants'
 import { Tabs as TabIcons } from './src/config/Icons'
 import { hp } from './src/config/Utils'
@@ -37,8 +37,10 @@ export default class App extends Component {
               <Tabs key={'tab-bar'} showLabel={true} tabBarPosition={'bottom'}
                 labelStyle={styles.labelStyle} tabBarStyle={styles.tabBarStyle}
                 activeTintColor={Colors.white} inactiveTintColor={Colors.black_55}>
-                <Scene key={'news-tab-content'} component={News} icon={TabIcons.news}
-                  tabBarLabel={'News'} hideNavBar></Scene>
+                <Scene key={'newsTab'} icon={TabIcons.news} tabBarLabel={'News'} hideNavBar>
+                  <Scene key={'newsMain'} component={News} hideNavBar></Scene>
+                  <Scene key={'newsDetail'} component={NewsDetail} hideNavBar></Scene>
+                </Scene>
                 <Scene key={'games-tab-content'} component={Games} icon={TabIcons.games}
                   tabBarLabel={'Games'} hideNavBar/>
                 <Scene key={'genres-tab-content'} component={Categories} icon={TabIcons.genres}

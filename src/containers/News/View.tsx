@@ -5,6 +5,7 @@ import { Colors } from '../../config/Constants'
 import { Global } from '../../config/Icons'
 import { imageURI, dateFormat } from '../../config/Utils'
 import { TouchableHighlight, View, Image, Text } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import style from './style'
 import { PacmanIndicator } from 'react-native-indicators'
 import { hp } from '../../config/Utils'
@@ -13,10 +14,15 @@ export default class News extends Component <NewsProps> {
 
     constructor(props: NewsProps) {
         super(props)
+        this.detailView = this.detailView.bind(this)
     }
 
     componentDidMount() {
         this.props.getNews()
+    }
+
+    detailView() {
+        Actions.newsDetail()
     }
 
     render() {
@@ -32,7 +38,7 @@ export default class News extends Component <NewsProps> {
                     <MessageView icon={Global.error} text={'Something went wrong'}
                         title={'Oops!'} action={this.props.getNews} buttonText={'Try Again'}/> :
                     this.props.news.map((item) =>
-                        <TouchableHighlight style={style.item} key={item.uid}>
+                        <TouchableHighlight style={style.item} key={item.uid} onPress={this.detailView}>
                             <View style={style.container}>
                                 <Image source={{uri: imageURI(item.image)}} style={style.image}/>
                                 <View style={style.dateContainer}>
