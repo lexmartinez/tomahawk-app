@@ -7,6 +7,6 @@ interface NewsDetailProps {
     url: string
 }
 
-interface NewsDetailProps {
+interface NewsDetailState {
     sticky: boolean
 }

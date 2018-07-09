@@ -20,7 +20,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
         this.renderBackground = this.renderBackground.bind(this)
         this.renderForeground = this.renderForeground.bind(this)
         this.renderStickyHeader = this.renderStickyHeader.bind(this)
-        this.onChangeSticky = this.onChangeSticky.bind(this)
+        this.onChangeHeaderVisibility = this.onChangeHeaderVisibility.bind(this)
     }
 
     renderBackground() {
@@ -61,7 +61,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
         )
     }
 
-    onChangeSticky(sticky: any) {
+    onChangeHeaderVisibility(sticky: any) {
         this.setState({sticky})
     }
     render() {
@@ -73,7 +73,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
             backgroundSpeed={10}
             renderBackground={this.renderBackground}
             renderForeground={this.renderForeground}
-            onChangeHeaderVisibility={this.onChangeSticky}
+            onChangeHeaderVisibility={this.onChangeHeaderVisibility}
             renderStickyHeader={this.renderStickyHeader}>
                 <StatusBar backgroundColor={Colors.black_20} translucent={true} barStyle={'light-content'}/>
                 <View style={style.view}>
