@@ -21,8 +21,8 @@ export default class News extends Component <NewsProps> {
         this.props.getNews()
     }
 
-    detailView() {
-        Actions.newsDetail()
+    detailView(item: any) {
+        Actions.newsDetail(item)
     }
 
     render() {
@@ -38,7 +38,7 @@ export default class News extends Component <NewsProps> {
                     <MessageView icon={Global.error} text={'Something went wrong'}
                         title={'Oops!'} action={this.props.getNews} buttonText={'Try Again'}/> :
                     this.props.news.map((item) =>
-                        <TouchableHighlight style={style.item} key={item.uid} onPress={this.detailView}>
+                        <TouchableHighlight style={style.item} key={item.uid} onPress={() => this.detailView(item)}>
                             <View style={style.container}>
                                 <Image source={{uri: imageURI(item.image)}} style={style.image}/>
                                 <View style={style.dateContainer}>
