@@ -3,7 +3,7 @@ import { Component } from 'react'
 import { Animated, View, StatusBar, Text } from 'react-native'
 import { Colors } from '../../config/Constants'
 import { hp } from '../../config/Utils'
-import styles from './styles'
+import style from './style'
 import ParallaxScrollView from 'react-native-parallax-scroll-view'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
@@ -17,19 +17,19 @@ export default class BaseView extends Component<BaseViewProps> {
 
     renderForeground() {
         return (
-            <View key={'parallax-header'} style={ styles.parallaxHeader }>
-                <Text style={ styles.parallaxText }>
+            <View key={'parallax-header'} style={ style.parallaxHeader }>
+                <Text style={ style.parallaxText }>
                     {this.props.title}
                 </Text>
-                <View style={ styles.line }/>
+                <View style={ style.line }/>
             </View>
         )
     }
 
     renderStickyHeader() {
         return (
-            <View key={'sticky-header'} style={styles.stickyHeader}>
-                <Text style={styles.stickyText}>{this.props.title}</Text>
+            <View key={'sticky-header'} style={style.stickyHeader}>
+                <Text style={style.stickyText}>{this.props.title}</Text>
             </View>
         )
     }
@@ -45,7 +45,7 @@ export default class BaseView extends Component<BaseViewProps> {
             renderForeground={this.renderForeground}
             renderStickyHeader={this.renderStickyHeader}>
                     <StatusBar backgroundColor={Colors.black_20} translucent={true} barStyle={'dark-content'}/>
-                    <View style={styles.view}>
+                    <View style={style.view}>
                         {children}
                     </View>
             </ParallaxScrollView>
