@@ -26,7 +26,8 @@ export default StyleSheet.create({
         paddingHorizontal: wp('2%'),
         position: 'absolute',
         top: hp('2.5%') + getStatusBarHeight(),
-        width: wp('30%')
+        width: wp('30%'),
+        zIndex: 99999
     },
     headerButtonText: {
         color: Colors.white,
@@ -58,18 +59,28 @@ export default StyleSheet.create({
         paddingHorizontal: wp('2%'),
         paddingVertical: hp('2%')
     },
+    stickyDate: {
+        color: Colors.white,
+        fontFamily: Fonts.REGULAR,
+        fontSize: hp('2%'),
+        marginTop: hp('-3.5%'),
+        paddingHorizontal: wp('4%'),
+        paddingVertical: hp('2%')
+    },
     stickyHeader: {
-        alignItems: 'center',
         backgroundColor: Colors.secondary_red,
-        height: hp('8%') + getStatusBarHeight(),
-        justifyContent: 'flex-end',
+        height: hp('12%') + getStatusBarHeight(),
+        justifyContent: 'center',
         width: wp('100%')
     },
     stickyText: {
         color: Colors.white,
+        flexWrap: 'wrap',
         fontFamily: Fonts.SEMIBOLD,
         fontSize: hp('3%'),
         margin: hp('2%'),
+        marginTop: hp('4%', '6%'),
+        width: wp('90%')
     },
     view: {
         backgroundColor: Colors.white,

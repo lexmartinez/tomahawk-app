@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-import { Animated, View, StatusBar, Text, Image } from 'react-native'
+import { View, StatusBar, Text, Image } from 'react-native'
 import { Colors } from '../../config/Constants'
 import { hp, wp } from '../../config/Utils'
 import { imageURI, dateFormat } from '../../config/Utils'
@@ -8,6 +8,7 @@ import style from './style'
 import ParallaxScrollView from 'react-native-parallax-scroll-view'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 export default class NewsDetail extends Component <NewsDetailProps> {
 
@@ -48,7 +49,10 @@ export default class NewsDetail extends Component <NewsDetailProps> {
     renderStickyHeader() {
         return (
             <View key={'sticky-header'} style={style.stickyHeader}>
-                <Text style={style.stickyText}>{this.props.title}</Text>
+                <Text style={style.stickyText} numberOfLines={2}
+                    ellipsizeMode={'tail'}>{this.props.title}</Text>
+                <Text style={style.stickyDate} numberOfLines={1}
+                    ellipsizeMode={'tail'}>{dateFormat(this.props.published_at)} - {this.props.author}</Text>
             </View>
         )
     }
@@ -56,7 +60,7 @@ export default class NewsDetail extends Component <NewsDetailProps> {
         return (
             <ParallaxScrollView
             headerBackgroundColor={Colors.secondary_red}
-            stickyHeaderHeight={ hp('10%') }
+            stickyHeaderHeight={ hp('12%') + getStatusBarHeight() }
             parallaxHeaderHeight={ hp('50%') }
             backgroundSpeed={10}
             renderBackground={this.renderBackground}
