@@ -1,4 +1,4 @@
-import { hp, wp } from '../../config/Utils'
+import { hp, wp, hpOS } from '../../config/Utils'
 import { Colors, Fonts } from '../../config/Constants'
 import { StyleSheet } from 'react-native'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
@@ -26,8 +26,7 @@ export default StyleSheet.create({
         paddingHorizontal: wp('2%'),
         position: 'absolute',
         top: hp('2.5%') + getStatusBarHeight(),
-        width: wp('30%'),
-        zIndex: 99999
+        width: wp('30%')
     },
     headerButtonText: {
         color: Colors.white,
@@ -79,7 +78,7 @@ export default StyleSheet.create({
         fontFamily: Fonts.SEMIBOLD,
         fontSize: hp('3%'),
         margin: hp('2%'),
-        marginTop: hp('4%', '6%'),
+        marginTop: hpOS('6%', '4%', '6%'),
         width: wp('90%')
     },
     view: {

@@ -10,13 +10,17 @@ import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
-export default class NewsDetail extends Component <NewsDetailProps> {
+export default class NewsDetail extends Component <NewsDetailProps, NewsDetailState> {
 
     constructor(props: NewsDetailProps) {
         super(props)
+        this.state = {
+            sticky: true
+        }
         this.renderBackground = this.renderBackground.bind(this)
         this.renderForeground = this.renderForeground.bind(this)
         this.renderStickyHeader = this.renderStickyHeader.bind(this)
+        this.onChangeSticky = this.onChangeSticky.bind(this)
     }
 
     renderBackground() {
@@ -56,15 +60,20 @@ export default class NewsDetail extends Component <NewsDetailProps> {
             </View>
         )
     }
+
+    onChangeSticky(sticky: any) {
+        this.setState({sticky})
+    }
     render() {
         return (
             <ParallaxScrollView
             headerBackgroundColor={Colors.secondary_red}
-            stickyHeaderHeight={ hp('12%') + getStatusBarHeight() }
+            stickyHeaderHeight={ hp(this.state.sticky ? '5%' : '12%') + getStatusBarHeight() }
             parallaxHeaderHeight={ hp('50%') }
             backgroundSpeed={10}
             renderBackground={this.renderBackground}
             renderForeground={this.renderForeground}
+            onChangeHeaderVisibility={this.onChangeSticky}
             renderStickyHeader={this.renderStickyHeader}>
                 <StatusBar backgroundColor={Colors.black_20} translucent={true} barStyle={'light-content'}/>
                 <View style={style.view}>

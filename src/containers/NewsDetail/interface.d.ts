@@ -6,3 +6,7 @@ interface NewsDetailProps {
     published_at: number,
     url: string
 }
+
+interface NewsDetailProps {
+    sticky: boolean
+}
