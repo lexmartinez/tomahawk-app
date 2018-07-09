@@ -67,7 +67,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
     render() {
         return (
             <ParallaxScrollView
-            headerBackgroundColor={Colors.secondary_red}
+            headerBackgroundColor={Colors.white}
             stickyHeaderHeight={ hp(this.state.sticky ? '5%' : '12%') + getStatusBarHeight() }
             parallaxHeaderHeight={ hp('50%') }
             backgroundSpeed={10}
@@ -75,7 +75,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
             renderForeground={this.renderForeground}
             onChangeHeaderVisibility={this.onChangeHeaderVisibility}
             renderStickyHeader={this.renderStickyHeader}>
-                <StatusBar backgroundColor={Colors.black_20} translucent={true} barStyle={'light-content'}/>
+                <StatusBar backgroundColor={Colors.black_20} translucent={true} barStyle={'dark-content'}/>
                 <View style={style.view}>
                 </View>
             </ParallaxScrollView>
