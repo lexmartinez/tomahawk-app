@@ -30,7 +30,7 @@ export default class Categories extends Component <CategoriesProps> {
                     <MessageView icon={Global.error} text={'Something went wrong'}
                         title={'Oops!'} action={this.props.getCategories} buttonText={'Try Again'}/> :
                     this.props.categories.map((item) =>
-                        <TouchableHighlight style={style.item} key={item.slug}>
+                        <TouchableHighlight underlayColor={Colors.black_20} style={style.item} key={item.slug}>
                             <View style={style.itemView}>
                                 <Text style={style.itemText} numberOfLines={1}
                                     ellipsizeMode={'tail'}>{item.name}</Text>

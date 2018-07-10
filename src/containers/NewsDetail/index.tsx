@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-import { View, StatusBar, Text, Image, TouchableOpacity, Linking } from 'react-native'
+import { View, StatusBar, Text, Image, TouchableHighlight, Linking } from 'react-native'
 import { Colors } from '../../config/Constants'
 import { hp, wp } from '../../config/Utils'
 import { imageURI, dateFormat } from '../../config/Utils'
@@ -39,6 +39,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
                 <View style={style.headerButton}>
                     <Icon.Button name={'chevron-left'} size={hp('4%')} color={Colors.white}
                         backgroundColor={Colors.transparent}
+                        underlayColor={Colors.transparent}
                         onPress={Actions.pop} iconStyle={style.iconStyle}>
                         <Text style={style.headerButtonText}>Back</Text>
                     </Icon.Button>
@@ -90,6 +91,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
                     <View>
                         <Icon.Button name={'chevron-left'} size={hp('4%')} color={Colors.primary_grey}
                         backgroundColor={Colors.transparent} style={style.stickyButton}
+                        underlayColor={Colors.transparent}
                         onPress={Actions.pop} iconStyle={style.iconStyle}>
                             <Text style={style.stickyButtonText}>Back</Text>
                         </Icon.Button>
@@ -100,9 +102,10 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
                 }
                 <Text style={style.summaryText}>{this.props.summary}</Text>
                     <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}>
-                        <TouchableOpacity style={style.button} onPress={this.handleURL}>
+                        <TouchableHighlight
+                            underlayColor={Colors.black_20} style={style.button} onPress={this.handleURL}>
                             <Text style={style.buttonText}>Open Story</Text>
-                        </TouchableOpacity>
+                        </TouchableHighlight>
                     </View>
                 </View>
             </ParallaxScrollView>
