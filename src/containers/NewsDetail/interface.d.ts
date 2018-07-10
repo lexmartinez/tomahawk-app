@@ -4,7 +4,8 @@ interface NewsDetailProps {
     author: string,
     image: string,
     published_at: number,
-    url: string
+    url: string,
+    summary: string
 }
 
 interface NewsDetailState {

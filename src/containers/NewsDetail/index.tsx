@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-import { View, StatusBar, Text, Image } from 'react-native'
+import { View, StatusBar, Text, Image, TouchableOpacity, Linking } from 'react-native'
 import { Colors } from '../../config/Constants'
 import { hp, wp } from '../../config/Utils'
 import { imageURI, dateFormat } from '../../config/Utils'
@@ -8,7 +8,7 @@ import style from './style'
 import ParallaxScrollView from 'react-native-parallax-scroll-view'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { getStatusBarHeight, isIphoneX } from 'react-native-iphone-x-helper'
 
 export default class NewsDetail extends Component <NewsDetailProps, NewsDetailState> {
 
@@ -21,6 +21,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
         this.renderForeground = this.renderForeground.bind(this)
         this.renderStickyHeader = this.renderStickyHeader.bind(this)
         this.onChangeHeaderVisibility = this.onChangeHeaderVisibility.bind(this)
+        this.handleURL = this.handleURL.bind(this)
     }
 
     renderBackground() {
@@ -44,7 +45,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
                 </View>
                 <Text style={ style.parallaxText }>{this.props.title}</Text>
                 <Text style={ style.parallaxDate }>
-                    {dateFormat(this.props.published_at)} - {this.props.author}
+                    {dateFormat(this.props.published_at)} By {this.props.author}
                 </Text>
             </View>
         )
@@ -52,23 +53,30 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
 
     renderStickyHeader() {
         return (
-            <View key={'sticky-header'} style={style.stickyHeader}>
-                <Text style={style.stickyText} numberOfLines={2}
-                    ellipsizeMode={'tail'}>{this.props.title}</Text>
-                <Text style={style.stickyDate} numberOfLines={1}
-                    ellipsizeMode={'tail'}>{dateFormat(this.props.published_at)} - {this.props.author}</Text>
-            </View>
+            <View key={'sticky-header'} style={style.stickyHeader}></View>
         )
     }
 
     onChangeHeaderVisibility(sticky: any) {
         this.setState({sticky})
     }
+
+    handleURL = () => {
+        Linking.canOpenURL(this.props.url).then((supported: boolean) => {
+          if (supported) {
+            Linking.openURL(this.props.url)
+          } else {
+            alert(`Problem opening link: ${this.props.url}`)
+          }
+        })
+    }
+
     render() {
+        const { sticky } = this.state
         return (
             <ParallaxScrollView
             headerBackgroundColor={Colors.white}
-            stickyHeaderHeight={ hp(this.state.sticky ? '5%' : '12%') + getStatusBarHeight() }
+            stickyHeaderHeight={ isIphoneX() ? getStatusBarHeight() + hp('2.5%') : getStatusBarHeight() }
             parallaxHeaderHeight={ hp('50%') }
             backgroundSpeed={10}
             renderBackground={this.renderBackground}
@@ -76,7 +84,21 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
             onChangeHeaderVisibility={this.onChangeHeaderVisibility}
             renderStickyHeader={this.renderStickyHeader}>
                 <StatusBar backgroundColor={Colors.black_20} translucent={true} barStyle={'dark-content'}/>
-                <View style={style.view}>
+                <View style={[style.view, {paddingTop: sticky ? hp('3%') : hp('5%')}]}>
+                {
+                    !sticky ?
+                    <View>
+                        <Text style={style.stickyText}>{this.props.title}</Text>
+                        <Text style={style.stickyDate}>
+                            By {this.props.author}</Text>
+                    </View> : undefined
+                }
+                <Text style={style.summaryText}>{this.props.summary}</Text>
+                    <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}>
+                        <TouchableOpacity style={style.button} onPress={this.handleURL}>
+                            <Text style={style.buttonText}>Open Story</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </ParallaxScrollView>
         )

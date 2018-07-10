@@ -1,6 +1,7 @@
 import { hp, wp, hpOS } from '../../config/Utils'
 import { Colors, Fonts } from '../../config/Constants'
 import { StyleSheet } from 'react-native'
+import { isIOS } from '../../config/Utils'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 export default StyleSheet.create({
@@ -21,6 +22,20 @@ export default StyleSheet.create({
         position: 'absolute',
         top: 0,
         width: wp('100%')
+    },
+    button: {
+        alignItems: 'center',
+        borderColor: Colors.primary_red,
+        borderRadius: hp('1.5%'),
+        borderWidth: 1,
+        height: hp('6%'),
+        justifyContent: 'center',
+        width: wp('50%')
+    },
+    buttonText: {
+        color: Colors.secondary_red,
+        fontFamily: Fonts.SEMIBOLD,
+        fontSize: hp('2.5%')
     },
     headerButton: {
         paddingHorizontal: wp('2%'),
@@ -59,11 +74,10 @@ export default StyleSheet.create({
         paddingVertical: hp('2%')
     },
     stickyDate: {
-        color: Colors.white,
+        color: Colors.primary_red,
         fontFamily: Fonts.REGULAR,
-        fontSize: hp('2%'),
-        marginTop: hp('-3.5%'),
-        paddingHorizontal: wp('4%'),
+        fontSize: hp('3.6%'),
+        marginTop: hp('0.2%'),
         paddingVertical: hp('2%')
     },
     stickyHeader: {
@@ -73,16 +87,22 @@ export default StyleSheet.create({
         width: wp('100%')
     },
     stickyText: {
-        color: Colors.white,
+        color: Colors.primary_grey,
         flexWrap: 'wrap',
-        fontFamily: Fonts.SEMIBOLD,
-        fontSize: hp('3%'),
-        margin: hp('2%'),
+        fontFamily: Fonts.BOLD,
+        fontSize: hp('5%'),
         marginTop: hpOS('6%', '4%', '6%'),
         width: wp('90%')
     },
+    summaryText: {
+        fontFamily: isIOS() ? Fonts.LIGHT : Fonts.REGULAR,
+        fontSize: hp('3%'),
+        marginBottom: hp('4%'),
+        textAlign: 'justify'
+    },
     view: {
         backgroundColor: Colors.white,
-        paddingTop: hp('1%')
+        paddingHorizontal: hp('3%'),
+        paddingVertical: hp('2%'),
     }
 })
