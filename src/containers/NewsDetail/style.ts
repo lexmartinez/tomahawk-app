@@ -73,6 +73,15 @@ export default StyleSheet.create({
         paddingHorizontal: wp('2%'),
         paddingVertical: hp('2%')
     },
+    stickyButton: {
+        marginLeft: wp('-4%')
+    },
+    stickyButtonText: {
+        color: Colors.primary_grey,
+        fontFamily: Fonts.SEMIBOLD,
+        fontSize: hp('2.5%'),
+        marginTop: hp('0%', '-0.3%')
+    },
     stickyDate: {
         color: Colors.primary_red,
         fontFamily: Fonts.REGULAR,

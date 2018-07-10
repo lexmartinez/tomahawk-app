@@ -88,6 +88,11 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
                 {
                     !sticky ?
                     <View>
+                        <Icon.Button name={'chevron-left'} size={hp('4%')} color={Colors.primary_grey}
+                        backgroundColor={Colors.transparent} style={style.stickyButton}
+                        onPress={Actions.pop} iconStyle={style.iconStyle}>
+                            <Text style={style.stickyButtonText}>Back</Text>
+                        </Icon.Button>
                         <Text style={style.stickyText}>{this.props.title}</Text>
                         <Text style={style.stickyDate}>
                             By {this.props.author}</Text>
