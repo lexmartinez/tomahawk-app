@@ -106,8 +106,7 @@ export default StyleSheet.create({
     summaryText: {
         fontFamily: isIOS() ? Fonts.LIGHT : Fonts.REGULAR,
         fontSize: hp('3%'),
-        marginBottom: hp('4%', '3%'),
-        textAlign: 'justify'
+        marginBottom: hp('4%', '3%')
     },
     view: {
         backgroundColor: Colors.white,
