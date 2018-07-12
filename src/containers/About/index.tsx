@@ -1,13 +1,12 @@
-import React from 'react'
-import { Component } from 'react'
-import { View } from 'react-native'
+import About from './View'
+import { connect } from 'react-redux'
+import { selector } from '../../reducers/About'
+import { getAppInfo } from '../../actions/About'
 
-export default class About extends Component <AboutProps> {
+const mapStateToProps = (state: any) => selector(state)
 
-    render() {
-        return (
-            <View>
-            </View>
-        )
-    }
-}
+const mapDispatchToProps = (dispatch: any) => ({
+  getAppInfo: () => dispatch(getAppInfo()),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(About)

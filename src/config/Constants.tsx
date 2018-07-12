@@ -19,6 +19,10 @@ export const Fonts = {
 }
 
 export const ActionTypes = {
+    // About
+    GET_APP_INFO_ERROR: 'GET_APP_INFO_ERROR',
+    GET_APP_INFO_REQUEST: 'GET_APP_INFO_REQUEST',
+    GET_APP_INFO_SUCCESS: 'GET_APP_INFO_SUCCESS',
     // Categories
     GET_CATEGORIES_ERROR: 'GET_CATEGORIES_ERROR',
     GET_CATEGORIES_REQUEST: 'GET_CATEGORIES_REQUEST',
@@ -33,5 +37,10 @@ export const ActionTypes = {
     GET_NEWS_SUCCESS: 'GET_NEWS_SUCCESS'
 }
 
+export const AppInfo = {
+    version: '0.0.1'
+}
+
 export const API_URL = 'https://api-endpoint.igdb.com'
+export const INFO_URL = 'https://api.github.com/users/lexmartinez'
 export const API_KEY = {'user-key' : 'YOUR-IGDB-API-KEY'}
