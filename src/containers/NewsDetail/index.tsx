@@ -9,6 +9,7 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view'
 import { Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { getStatusBarHeight, isIphoneX } from 'react-native-iphone-x-helper'
+import { NEWS_PLACEHOLDER } from '../../config/Constants'
 
 export default class NewsDetail extends Component <NewsDetailProps, NewsDetailState> {
 
@@ -25,10 +26,11 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
     }
 
     renderBackground() {
-        const image = {height: hp('50%'), uri: imageURI(this.props.image), width: wp('100%')}
+        const { image } = this.props
+        const parsedImage = {height: hp('50%'), uri: imageURI(image, NEWS_PLACEHOLDER), width: wp('100%')}
         return (
             <View>
-                <Image source={image}/>
+                <Image source={parsedImage}/>
                 <View style={style.backgroundView}/>
             </View>
         )

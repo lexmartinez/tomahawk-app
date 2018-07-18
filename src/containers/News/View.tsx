@@ -9,7 +9,7 @@ import { Actions } from 'react-native-router-flux'
 import style from './style'
 import { PacmanIndicator } from 'react-native-indicators'
 import { hp } from '../../config/Utils'
-
+import { NEWS_PLACEHOLDER } from '../../config/Constants'
 export default class News extends Component <NewsProps> {
 
     constructor(props: NewsProps) {
@@ -41,7 +41,7 @@ export default class News extends Component <NewsProps> {
                         <TouchableHighlight style={style.item} underlayColor={Colors.black_20}
                             key={item.uid} onPress={() => this.detailView(item)}>
                             <View style={style.container}>
-                                <Image source={{uri: imageURI(item.image)}} style={style.image}/>
+                                <Image source={{uri: imageURI(item.image, NEWS_PLACEHOLDER)}} style={style.image}/>
                                 <View style={style.dateContainer}>
                                     <Text style={style.date}>{dateFormat(item.published_at)}</Text>
                                     <Text style={style.author}>{item.author}</Text>
