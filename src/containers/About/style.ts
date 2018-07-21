@@ -62,12 +62,12 @@ export default StyleSheet.create({
         lineHeight: hp('5%')
     },
     loading: {
-        height: hp('65%'),
+        height: hp('100%'),
         justifyContent: 'center'
     },
     logo : {
         height: hp('9%'),
         marginTop: hp('5%'),
-        width: hp('9%'),
+        width: hp('9%')
     }
 })

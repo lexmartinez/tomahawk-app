@@ -31,7 +31,7 @@ export const getAppInfo = () => (
       return fetchAppInfo()
       .then((response: any) => response.json())
       .then((response: any) => {
-          dispatch(response.error ? getAppInfoError() : getAppInfoSuccess(response))
+          dispatch((response.error || !response.login) ? getAppInfoError() : getAppInfoSuccess(response))
       })
       .catch(() => dispatch(getAppInfoError()))
     } catch (error) {
