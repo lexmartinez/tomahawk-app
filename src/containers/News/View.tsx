@@ -41,7 +41,7 @@ export default class News extends Component <NewsProps> {
                         <TouchableHighlight style={style.item} underlayColor={Colors.black_20}
                             key={item.uid} onPress={() => this.detailView(item)}>
                             <View style={style.container}>
-                                <Image source={{uri: imageURI(item.image, NEWS_PLACEHOLDER)}} style={style.image}/>
+                                <Image source={{uri: imageURI(item.image, NEWS_PLACEHOLDER)}}/>
                                 <View style={style.dateContainer}>
                                     <Text style={style.date}>{dateFormat(item.published_at)}</Text>
                                     <Text style={style.author}>{item.author}</Text>
