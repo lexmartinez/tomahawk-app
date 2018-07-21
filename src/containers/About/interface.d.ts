@@ -1,6 +1,9 @@
 interface AboutProps {
     getAppInfo() : void,
     loading: boolean,
-    about: any,
-    error: boolean
+    error: boolean,
+    about: {
+        version: string
+        author: any
+    }
 }

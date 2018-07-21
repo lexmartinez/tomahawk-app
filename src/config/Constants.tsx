@@ -1,6 +1,7 @@
 export const Colors = {
     black_20: 'rgba(10,10,10,0.2)',
     black_55: 'rgba(10,10,10,0.55)',
+    grey_15: 'rgba(150,150,150,0.15)',
     grey_30: 'rgba(150,150,150,0.3)',
     grey_50: 'rgba(150,150,150,0.5)',
     primary_grey: '#454545',
