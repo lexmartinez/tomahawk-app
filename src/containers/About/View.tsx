@@ -7,6 +7,7 @@ import { PacmanIndicator } from 'react-native-indicators'
 import { Colors } from '../../config/Constants'
 import { Global } from '../../config/Icons'
 import { hp } from '../../config/Utils'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 export default class About extends Component <AboutProps> {
 
     constructor(props: AboutProps) {
@@ -53,6 +54,21 @@ export default class About extends Component <AboutProps> {
                                     <Text style={style.lineLink}>{author.blog}</Text>
                                 </TouchableOpacity> : undefined
                             }
+                        </View>
+
+                        <View style={style.githubPanel}>
+                            <Icon.Button name={'github-box'} size={hp('4%')} color={Colors.primary_grey}
+                                backgroundColor={Colors.transparent}
+                                underlayColor={Colors.transparent}
+                                onPress={() => {this.handleURL(`${author.html_url}/tomahawk-app`)}}>
+                                <Text style={style.buttonText}>Project Source Code</Text>
+                            </Icon.Button>
+                            <Icon.Button name={'bug'} size={hp('4%')} color={Colors.primary_grey}
+                                backgroundColor={Colors.transparent}
+                                underlayColor={Colors.transparent}
+                                onPress={() => {this.handleURL(`${author.html_url}/tomahawk-app/issues/new`)}}>
+                                <Text style={style.buttonText}>Report an Issue</Text>
+                            </Icon.Button>
                         </View>
                     </View>
                 }

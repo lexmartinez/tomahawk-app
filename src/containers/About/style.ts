@@ -11,6 +11,10 @@ export default StyleSheet.create({
         paddingHorizontal: hp('3%'),
         paddingVertical: wp('3%'),
     },
+    buttonText: {
+        color: Colors.primary_grey,
+        fontFamily: Fonts.REGULAR
+    },
     container: {
         backgroundColor: Colors.white_90,
         height: hp('100%')
@@ -19,7 +23,9 @@ export default StyleSheet.create({
         backgroundColor: Colors.white,
         borderColor: Colors.grey_50,
         borderWidth: isIOS() ? 0.5 : 1,
-        marginTop: hp('3%')
+        marginTop: hp('3%'),
+        paddingHorizontal: hp('2%'),
+        paddingVertical: wp('2%')
     },
     header: {
         alignItems: 'center',
