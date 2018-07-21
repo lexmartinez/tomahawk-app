@@ -26,18 +26,19 @@ export default class News extends Component <NewsProps> {
     }
 
     render() {
+        const { loading, error, getNews, news } = this.props
         return (
             <BaseView title={'News'}>
-                {this.props.loading &&
+                {loading &&
                     <View style={style.loading}>
-                        <PacmanIndicator color={Colors.secondary_red} animating={this.props.loading} size={hp('10%')}/>
+                        <PacmanIndicator color={Colors.secondary_red} animating={loading} size={hp('10%')}/>
                     </View>
                 }
                 {
-                    this.props.error ?
+                    error ?
                     <MessageView icon={Global.error} text={'Something went wrong'}
-                        title={'Oops!'} action={this.props.getNews} buttonText={'Try Again'}/> :
-                    this.props.news.map((item) =>
+                        title={'Oops!'} action={getNews} buttonText={'Try Again'}/> :
+                    news.map((item) =>
                         <TouchableHighlight style={style.item} underlayColor={Colors.black_20}
                             key={item.uid} onPress={() => this.detailView(item)}>
                             <View style={style.container}>

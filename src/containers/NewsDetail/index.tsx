@@ -36,6 +36,7 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
         )
     }
     renderForeground() {
+        const { title, author, published_at } = this.props
         return (
             <View key={'parallax-header'} style={style.parallaxHeader}>
                 <View style={style.headerButton}>
@@ -46,9 +47,9 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
                         <Text style={style.headerButtonText}>Back</Text>
                     </Icon.Button>
                 </View>
-                <Text style={ style.parallaxText }>{this.props.title}</Text>
+                <Text style={ style.parallaxText }>{title}</Text>
                 <Text style={ style.parallaxDate }>
-                    {dateFormat(this.props.published_at)} By {this.props.author}
+                    {dateFormat(published_at)} By {author}
                 </Text>
             </View>
         )
@@ -65,17 +66,19 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
     }
 
     handleURL = () => {
-        Linking.canOpenURL(this.props.url).then((supported: boolean) => {
+        const { url } = this.props
+        Linking.canOpenURL(url).then((supported: boolean) => {
           if (supported) {
-            Linking.openURL(this.props.url)
+            Linking.openURL(url)
           } else {
-            alert(`Problem opening link: ${this.props.url}`)
+            alert(`Problem opening link: ${url}`)
           }
         })
     }
 
     render() {
         const { sticky } = this.state
+        const { title, summary, author } = this.props
         return (
             <ParallaxScrollView
             headerBackgroundColor={Colors.white}
@@ -97,12 +100,12 @@ export default class NewsDetail extends Component <NewsDetailProps, NewsDetailSt
                         onPress={Actions.pop} iconStyle={style.iconStyle}>
                             <Text style={style.stickyButtonText}>Back</Text>
                         </Icon.Button>
-                        <Text style={style.stickyText}>{this.props.title}</Text>
+                        <Text style={style.stickyText}>{title}</Text>
                         <Text style={style.stickyDate}>
-                            By {this.props.author}</Text>
+                            By {author}</Text>
                     </View> : undefined
                 }
-                <Text style={style.summaryText}>{this.props.summary}</Text>
+                <Text style={style.summaryText}>{summary}</Text>
                     <View style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}>
                         <TouchableHighlight
                             underlayColor={Colors.black_20} style={style.button} onPress={this.handleURL}>

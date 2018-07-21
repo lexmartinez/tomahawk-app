@@ -22,7 +22,7 @@ export default class About extends Component <AboutProps> {
         })
     }
     render() {
-        const { about: { version, author = {} } } = this.props
+        const { about: { version, author = {} }, loading, error} = this.props
         return (
             <View style={style.container}>
                 <View style={style.header}>
