@@ -6,7 +6,7 @@ export default StyleSheet.create({
     authorPanel: {
         backgroundColor: Colors.white,
         borderColor: Colors.grey_50,
-        borderWidth: isIOS() ? 0.5 : 1,
+        borderWidth: 0.5,
         marginTop: hp('3%'),
         paddingHorizontal: hp('3%'),
         paddingVertical: wp('3%'),
@@ -22,7 +22,7 @@ export default StyleSheet.create({
     githubPanel: {
         backgroundColor: Colors.white,
         borderColor: Colors.grey_50,
-        borderWidth: isIOS() ? 0.5 : 1,
+        borderWidth: 0.5,
         marginTop: hp('3%'),
         paddingHorizontal: hp('2%'),
         paddingVertical: wp('2%')
@@ -31,7 +31,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: Colors.white,
         borderBottomColor: Colors.grey_50,
-        borderBottomWidth: isIOS() ? 0.5 : 1,
+        borderBottomWidth: 0.5,
         height: hp('40%'),
         justifyContent: 'center'
     },
