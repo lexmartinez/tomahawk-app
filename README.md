@@ -49,8 +49,7 @@ You'll need to run this app:
 After you have installed all dependencies you can now start developing with:
 
 * `react-native start --reset-cache` then
-* `react-native run-ios`
-* or `react-native run-android`
+* `react-native run-ios` or `react-native run-android`
 
  It will start the desired mobile operating system emulator with the app running, any change made will refresh the app on emulator
 
