@@ -1,4 +1,6 @@
 interface BaseViewProps {
     children: any,
-    title: string
+    title: string,
+    onScrollEndDrag?: any,
+    onScrollBeginDrag?: any
 }

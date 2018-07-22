@@ -34,14 +34,17 @@ export default class BaseView extends Component<BaseViewProps> {
         )
     }
     render() {
-        const { children } = this.props
+        const { children, onScrollBeginDrag, onScrollEndDrag } = this.props
         return (
             <ParallaxScrollView
             headerBackgroundColor={Colors.white}
             stickyHeaderHeight={ hp('8%') + getStatusBarHeight() }
             parallaxHeaderHeight={ hp('17%') }
             backgroundSpeed={10}
-            renderScrollComponent={() => <Animated.ScrollView style={{backgroundColor: Colors.white}}/>}
+            renderScrollComponent={() => <Animated.ScrollView
+                onScrollBeginDrag={onScrollBeginDrag ? onScrollBeginDrag : () => {}}
+                onScrollEndDrag={onScrollEndDrag ? onScrollEndDrag : () => {}}
+                style={{backgroundColor: Colors.white}}/>}
             renderForeground={this.renderForeground}
             renderStickyHeader={this.renderStickyHeader}>
                     <StatusBar backgroundColor={Colors.black_20} translucent={true} barStyle={'dark-content'}/>
