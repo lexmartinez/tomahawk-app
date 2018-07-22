@@ -11,9 +11,9 @@ const getNewsError = () => (
   }
 )
 
-const getNewsSuccess = (news: any) => (
+const getNewsSuccess = (news: any, page: number) => (
     {
-      payload: { news },
+      payload: { news, page },
       type: GET_NEWS_SUCCESS
     }
 )
@@ -24,14 +24,14 @@ const getNewsRequest = () => (
       type: GET_NEWS_REQUEST
     }
 )
-export const getNews = () => (
+export const getNews = (page: number) => (
   (dispatch: any) => {
     dispatch(getNewsRequest())
     try {
-      return fetchNews()
+      return fetchNews(page)
       .then((response) => response.json())
       .then((response) => {
-          dispatch(response.error ? getNewsError() : getNewsSuccess(response))
+          dispatch(response.error ? getNewsError() : getNewsSuccess(response, page))
       })
       .catch(() => dispatch(getNewsError()))
     } catch (error) {
