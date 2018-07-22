@@ -51,7 +51,7 @@ export default class News extends Component <NewsProps, NewsState> {
         const { loading, error, getNews, news } = this.props
         const { page } = this.state
         return (
-            <BaseView title={'News'} onScrollEndDrag={this.nextPage}>
+            <BaseView title={'News'} onScrollEnd={this.nextPage}>
                 {loading && page === 0  &&
                     <View style={style.loading}>
                         <PacmanIndicator color={Colors.secondary_red} animating={loading} size={hp('10%')}/>

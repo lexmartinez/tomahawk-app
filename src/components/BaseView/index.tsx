@@ -34,7 +34,7 @@ export default class BaseView extends Component<BaseViewProps> {
         )
     }
     render() {
-        const { children, onScrollBeginDrag, onScrollEndDrag } = this.props
+        const { children, onScrollEnd } = this.props
         return (
             <ParallaxScrollView
             headerBackgroundColor={Colors.white}
@@ -42,8 +42,7 @@ export default class BaseView extends Component<BaseViewProps> {
             parallaxHeaderHeight={ hp('17%') }
             backgroundSpeed={10}
             renderScrollComponent={() => <Animated.ScrollView
-                onScrollBeginDrag={onScrollBeginDrag ? onScrollBeginDrag : () => {}}
-                onScrollEndDrag={onScrollEndDrag ? onScrollEndDrag : () => {}}
+                onScrollEndDrag={onScrollEnd}
                 style={{backgroundColor: Colors.white}}/>}
             renderForeground={this.renderForeground}
             renderStickyHeader={this.renderStickyHeader}>
