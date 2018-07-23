@@ -27,7 +27,8 @@ export default StyleSheet.create({
         color: Colors.secondary_red,
         fontFamily: Fonts.SEMIBOLD,
         fontSize: hp('5%'),
-        paddingVertical: hp('1%')
+        paddingVertical: hp('1%'),
+        width: wp('78.5%')
     },
     stickyBack: {
         paddingBottom: hpOS('1%', '0.5%'),
