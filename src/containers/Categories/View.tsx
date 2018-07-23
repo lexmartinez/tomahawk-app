@@ -7,14 +7,21 @@ import { TouchableHighlight, View, Text } from 'react-native'
 import style from './style'
 import { PacmanIndicator } from 'react-native-indicators'
 import { hp } from '../../config/Utils'
+import { Actions } from 'react-native-router-flux'
+
 export default class Categories extends Component <CategoriesProps> {
 
     constructor(props: CategoriesProps) {
         super(props)
+        this.categoryDetail = this.categoryDetail.bind(this)
     }
 
     componentDidMount() {
         this.props.getCategories()
+    }
+
+    categoryDetail(category: any) {
+        Actions.genresDetail({category})
     }
 
     render() {
@@ -31,7 +38,9 @@ export default class Categories extends Component <CategoriesProps> {
                     <MessageView icon={Global.error} text={'Something went wrong'}
                         title={'Oops!'} action={getCategories} buttonText={'Try Again'}/> :
                     categories.map((item) =>
-                        <TouchableHighlight underlayColor={Colors.black_20} style={style.item} key={item.slug}>
+                        <TouchableHighlight underlayColor={Colors.black_20} style={style.item}
+                            key={`${item.slug}${item.id}`}
+                            onPress={() => {this.categoryDetail(item)}}>
                             <View style={style.itemView}>
                                 <Text style={style.itemText} numberOfLines={1}
                                     ellipsizeMode={'tail'}>{item.name}</Text>
