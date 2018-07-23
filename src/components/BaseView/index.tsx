@@ -1,12 +1,13 @@
 import React from 'react'
 import { Component } from 'react'
-import { Animated, View, StatusBar, Text } from 'react-native'
+import { Animated, View, StatusBar, Text, TouchableOpacity } from 'react-native'
 import { Colors } from '../../config/Constants'
 import { hp } from '../../config/Utils'
 import style from './style'
 import ParallaxScrollView from 'react-native-parallax-scroll-view'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
-
+import { Actions } from 'react-native-router-flux'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 export default class BaseView extends Component<BaseViewProps> {
 
     constructor(props: BaseViewProps) {
@@ -16,19 +17,35 @@ export default class BaseView extends Component<BaseViewProps> {
     }
 
     renderForeground() {
+        const { back } = this.props
         return (
             <View key={'parallax-header'} style={ style.parallaxHeader }>
-                <Text style={ style.parallaxText }>
-                    {this.props.title}
-                </Text>
+                <View style={{flexDirection: 'row'}}>
+                    {
+                        back &&
+                        <TouchableOpacity style={style.parallaxBack} onPress={Actions.pop}>
+                            <Icon name={'chevron-left'} size={hp('7%')} color={Colors.secondary_red}></Icon>
+                        </TouchableOpacity>
+                    }
+                    <Text style={ style.parallaxText } numberOfLines={1} ellipsizeMode={'tail'}>
+                        {this.props.title}
+                    </Text>
+                </View>
                 <View style={ style.line }/>
             </View>
         )
     }
 
     renderStickyHeader() {
+        const { back } = this.props
         return (
             <View key={'sticky-header'} style={style.stickyHeader}>
+                {
+                    back &&
+                        <TouchableOpacity style={style.stickyBack} onPress={Actions.pop}>
+                            <Icon name={'chevron-left'} size={hp('6%')} color={Colors.white}></Icon>
+                        </TouchableOpacity>
+                }
                 <Text style={style.stickyText}>{this.props.title}</Text>
             </View>
         )
