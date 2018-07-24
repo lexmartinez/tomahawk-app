@@ -1,19 +1,12 @@
-import React from 'react'
-import { Component } from 'react'
-import { BaseView } from '../../components'
-export default class CategoryDetail extends Component <CategoryDetailProps, CategoryDetailState> {
+import CategoryDetail from './View'
+import { connect } from 'react-redux'
+import { selector } from '../../reducers/Categories'
+import { getCategoryGames } from '../../actions/Categories'
 
-    constructor(props: CategoryDetailProps) {
-        super(props)
-        this.state = {
-        }
-    }
-    render() {
-        const { category } = this.props
-        return (
-            <BaseView title={category.name} back={true}>
-            </BaseView>
-        )
-    }
+const mapStateToProps = (state: any) => selector(state)
 
-}
+const mapDispatchToProps = (dispatch: any) => ({
+  getCategoryGames: (category: number, page: number) => dispatch(getCategoryGames(category, page)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryDetail)

@@ -6,3 +6,10 @@ export const fetchCategories = () => (
       .then((res) => res)
       .catch((err) => err)
 )
+
+export const fetchGames = (category: number, page: number) => (
+  fetch(`${API_URL}/games/?fields=*&limit=5&order=name&filter[genres][eq]=${category}&offset=${(page * 5)}`,
+    { headers: API_KEY })
+    .then((res) => res)
+    .catch((err) => err)
+)
