@@ -1,7 +1,7 @@
 import React from 'react'
 import { Component } from 'react'
-import { BaseView } from '../../components'
-import { View, Text } from 'react-native'
+import { BaseView, GameListItem } from '../../components'
+import { View } from 'react-native'
 import { PacmanIndicator } from 'react-native-indicators'
 import { Colors } from '../../config/Constants'
 import { hp } from '../../config/Utils'
@@ -41,8 +41,10 @@ export default class CategoryDetail extends Component <CategoryDetailProps, Cate
                     </View>
                 }
                 {
-                    games && games.map((item: any) =>
-                    <Text key={item.id}>{item.name}</Text>
+                    games && games.map((game: any) =>
+                        game.id ?
+                        <GameListItem game={game} key={`${game.id}${game.slug}`} onPress={() => {}}></GameListItem>
+                        : undefined
                     )
                 }
             </BaseView>

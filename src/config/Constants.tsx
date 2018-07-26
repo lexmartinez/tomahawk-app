@@ -46,6 +46,7 @@ export const AppInfo = {
 }
 
 export const NEWS_PLACEHOLDER = 'https://www.rbs.ca/wp-content/themes/rbs/images/news-placeholder.png'
+export const GAME_PLACEHOLDER = 'http://games.vodacom.co.za/assets/rich/placeholder_games_cover.png'
 export const API_URL = 'https://api-endpoint.igdb.com'
 export const INFO_URL = 'https://api.github.com/users/lexmartinez'
 export const API_KEY = {'user-key' : 'IGDB-API-KEY'}

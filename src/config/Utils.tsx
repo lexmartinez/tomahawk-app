@@ -40,6 +40,10 @@ export function imageURI(uri: string, placeholder: string) {
     }
 }
 
+export function gameImage(hash: string, size: string) {
+    return `https://images.igdb.com/igdb/image/upload/t_${size}/${hash}.jpg`
+}
+
 export function dateFormat(date: any, format?: string) {
     return moment(date).format(format || 'MMMM DD, YYYY')
 }
