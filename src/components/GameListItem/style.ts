@@ -3,30 +3,9 @@ import { Colors, Fonts } from '../../config/Constants'
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-    author: {
-        color: Colors.white,
-        fontFamily: Fonts.SEMIBOLD,
-        fontSize: hp('1.5%'),
-        marginTop: hp('-0.7%'),
-        paddingBottom: hp('1%'),
-        paddingHorizontal: wp('3%')
-    },
     container: {
         flex: 1,
         height: hp('55%'),
-        width: wp('90%')
-    },
-    date: {
-        color: Colors.white,
-        fontFamily: Fonts.SEMIBOLD,
-        fontSize: hp('3%', '2.6%'),
-        paddingHorizontal: wp('3%'),
-        paddingVertical: hp('1%')
-    },
-    dateContainer: {
-        backgroundColor: Colors.black_55,
-        position: 'absolute',
-        top: hp('4%'),
         width: wp('90%')
     },
     image: {
@@ -47,9 +26,12 @@ export default StyleSheet.create({
         shadowOpacity: 0.3,
         width: wp('90%')
     },
-    loading: {
-        height: hp('65%'),
-        justifyContent: 'center'
+    rating: {
+        alignSelf: 'flex-end',
+        paddingBottom: hp('2%'),
+        paddingHorizontal: wp('3.5%'),
+        paddingTop: hp('1%'),
+        width: wp('40%')
     },
     title: {
         color: Colors.white,

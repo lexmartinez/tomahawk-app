@@ -27,6 +27,7 @@
     "lint": "tslint -p \".\" -t stylish"
   },
   "dependencies": {
+    "@types/react-native-star-rating": "^1.0.0",
     "@types/react-redux": "^6.0.3",
     "@types/redux-logger": "^3.0.6",
     "moment": "^2.22.2",
@@ -38,6 +39,7 @@
     "react-native-responsive-screen": "^1.1.6",
     "react-native-router-flux": "^4.0.0-beta.31",
     "react-native-splash-screen": "^3.0.9",
+    "react-native-star-rating": "^1.0.9",
     "react-native-vector-icons": "^4.6.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
