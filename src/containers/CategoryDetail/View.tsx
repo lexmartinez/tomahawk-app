@@ -3,6 +3,7 @@ import { Component } from 'react'
 import { BaseView, GameListItem } from '../../components'
 import { View } from 'react-native'
 import { PacmanIndicator } from 'react-native-indicators'
+import { Actions } from 'react-native-router-flux'
 import { Colors } from '../../config/Constants'
 import { hp } from '../../config/Utils'
 import style from './style'
@@ -30,6 +31,10 @@ export default class CategoryDetail extends Component <CategoryDetailProps, Cate
             this.setState({ page: page + 1 })
         }
     }
+
+    detailView(game: any) {
+        Actions.gameDetail({game})
+    }
     render() {
         const { category, games, loading } = this.props
         const { page } = this.state
@@ -43,7 +48,8 @@ export default class CategoryDetail extends Component <CategoryDetailProps, Cate
                 {
                     games && games.map((game: any) =>
                         game.id ?
-                        <GameListItem game={game} key={`${game.id}${game.slug}`} onPress={() => {}}></GameListItem>
+                        <GameListItem game={game} key={`${game.id}${game.slug}`}
+                            onPress={() => {this.detailView(game)}}></GameListItem>
                         : undefined
                     )
                 }

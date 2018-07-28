@@ -4,6 +4,7 @@ import NewsDetail from './NewsDetail'
 import CategoryDetail from './CategoryDetail'
 import Categories from './Categories'
 import About from './About'
+import GameDetail from './GameDetail'
 
 export {
     Categories,
@@ -11,5 +12,6 @@ export {
     News,
     NewsDetail,
     CategoryDetail,
-    About
+    About,
+    GameDetail
 }

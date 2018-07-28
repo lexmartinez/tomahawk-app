@@ -2,8 +2,8 @@ import React from 'react'
 import { Component } from 'react'
 import { StyleSheet } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
-import { Router, Scene, Stack, Tabs } from 'react-native-router-flux'
-import { Categories, Games, News, About, NewsDetail, CategoryDetail } from './src/containers'
+import { Router, Scene, Stack, Tabs, Modal } from 'react-native-router-flux'
+import { Categories, Games, News, About, NewsDetail, CategoryDetail, GameDetail } from './src/containers'
 import { Colors, Fonts } from './src/config/Constants'
 import { Tabs as TabIcons } from './src/config/Icons'
 import { hp } from './src/config/Utils'
@@ -33,6 +33,7 @@ export default class App extends Component {
       <Provider store={store}>
         <Router>
           <Stack key={'container'}>
+          <Modal key={'modal'}>
             <Scene key={'tab-container'}>
               <Tabs key={'tab-bar'} showLabel={true} tabBarPosition={'bottom'}
                 labelStyle={styles.labelStyle} tabBarStyle={styles.tabBarStyle}
@@ -51,6 +52,8 @@ export default class App extends Component {
                   tabBarLabel={'About'} hideNavBar/>
               </Tabs>
             </Scene>
+            <Scene key={'gameDetail'} component={GameDetail} hideNavBar/>
+            </Modal>
           </Stack>
         </Router>
       </Provider>
