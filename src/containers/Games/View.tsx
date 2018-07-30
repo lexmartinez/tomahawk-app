@@ -38,6 +38,9 @@ export default class Games extends Component <GamesProps, GamesState> {
                 <Text style={style.stickyText}>Games</Text>
                 <Search ref={'search_box'} backgroundColor={Colors.secondary_red}
                     cancelButtonTextStyle={style.cancelButtonTextStyle}
+                    searchIconCollapsedMargin={30}
+                    searchIconExpandedMargin={12}
+                    placeholderExpandedMargin={27}
                     inputStyle={style.inputStyle}
                 />
             </View>
