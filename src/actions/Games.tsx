@@ -1,6 +1,6 @@
 
 import { ActionTypes } from '../config/Constants'
-import { fetchGames } from '../services'
+import { fetchGames } from '../services/Games'
 
 const { GET_GAMES_SUCCESS, GET_GAMES_REQUEST, GET_GAMES_ERROR } = ActionTypes
 
@@ -11,9 +11,9 @@ const getGamesError = () => (
   }
 )
 
-const getGamesSuccess = (games: any) => (
+const getGamesSuccess = (games: any, page: number) => (
     {
-      payload: { games },
+      payload: { games, page },
       type: GET_GAMES_SUCCESS
     }
 )
@@ -24,11 +24,19 @@ const getGamesRequest = () => (
       type: GET_GAMES_REQUEST
     }
 )
-export const getGames = () => (
-    (dispatch: any) => {
-      dispatch(getGamesRequest())
-      return fetchGames()
-        .then((games: any) => dispatch(getGamesSuccess(games)))
-        .catch(() => dispatch(getGamesError()))
+
+export const getGames = (query: string, page: number) => (
+  (dispatch: any) => {
+    dispatch(getGamesRequest())
+    try {
+      return fetchGames(query, page)
+      .then((response: any) => response.json())
+      .then((response: any) => {
+          dispatch(response.error ? getGamesError() : getGamesSuccess(response, page))
+      })
+      .catch(() => dispatch(getGamesError()))
+    } catch (error) {
+      return dispatch(getGamesError())
     }
+  }
 )

@@ -17,6 +17,10 @@ export default StyleSheet.create({
         borderBottomWidth: 1,
         width: wp('90%')
     },
+    loading: {
+        height: hp('65%'),
+        justifyContent: 'center'
+    },
     parallaxBack: {
         marginLeft: wp('-3%'),
         marginRight: wp('3%'),
@@ -44,8 +48,9 @@ export default StyleSheet.create({
     },
     stickyHeader: {
         backgroundColor: Colors.secondary_red,
-        height: hp('11%') + getStatusBarHeight(),
+        height: hp('12%') + getStatusBarHeight(),
         justifyContent: 'flex-end',
+        paddingBottom: hp('2%'),
         width: wp('100%')
     },
     stickyText: {
@@ -53,7 +58,7 @@ export default StyleSheet.create({
         color: Colors.white,
         fontFamily: Fonts.SEMIBOLD,
         fontSize: hp('3%'),
-        margin: hp('1%'),
+        margin: hp('1%')
     },
     view: {
         backgroundColor: Colors.white,
