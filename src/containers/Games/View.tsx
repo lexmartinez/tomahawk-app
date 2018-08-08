@@ -94,7 +94,7 @@ export default class Games extends Component <GamesProps, GamesState> {
     render() {
 
         const { games, loading } = this.props
-        const { query, page } = this.state
+        const { page } = this.state
 
         return (
             <ParallaxScrollView
