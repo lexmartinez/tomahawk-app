@@ -57,7 +57,7 @@ After you have installed all dependencies you can now start developing with:
 
 | <img src="https://raw.githubusercontent.com/lexmartinez/tomahawk-app/master/screenshots/screenshot1.png" width="300"> | <img src="https://raw.githubusercontent.com/lexmartinez/tomahawk-app/master/screenshots/screenshot5.png" width="300"> | <img src="https://raw.githubusercontent.com/lexmartinez/tomahawk-app/master/screenshots/screenshot2.png" width="300"> |
 | ------------- | ------------- |------------- |
-| <img src="https://raw.githubusercontent.com/lexmartinez/tomahawk-app/master/screenshots/screenshot3.png" width="300"> | <img src="https://raw.githubusercontent.com/lexmartinez/tomahawk-app/master/screenshots/screenshot6.png" width="300"> | <img src="https://raw.githubusercontent.com/lexmartinez/tomahawk-app/master/screenshots/screenshot4.png" width="300"> |
+| <img src="https://raw.githubusercontent.com/lexmartinez/tomahawk-app/master/screenshots/screenshot6.png" width="300"> | <img src="https://raw.githubusercontent.com/lexmartinez/tomahawk-app/master/screenshots/screenshot3.png" width="300"> | <img src="https://raw.githubusercontent.com/lexmartinez/tomahawk-app/master/screenshots/screenshot4.png" width="300"> |
 
 ### License
 
